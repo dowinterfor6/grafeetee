@@ -48,7 +48,7 @@ $sidebarWidth: 60px;
     align-items: center;
     max-height: 50vh;
     opacity: 1;
-    transition: max-height 0.5s;
+    transition: all 0.5s;
 
     &.hide {
       max-height: 0;
@@ -82,8 +82,8 @@ $sidebarWidth: 60px;
       left: $sidebarWidth;
       display: none;
       opacity: 0;
+      // TODO: this doesn't work for some reason
       transition: opacity 0.3s;
-      z-index: 5;
 
       &.active {
         display: initial;
