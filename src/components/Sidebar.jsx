@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useRef, useState } from 'react';
 import { ChromePicker } from 'react-color';
 
-const Sidebar = () => {
+const Sidebar = ({ dispatch, SET_COLOR, SET_TOOL, SPRAY_PAINT }) => {
   const [minimized, setMinimized] = useState(false);
   const [openColorPicker, setOpenColorPicker] = useState(false);
   const [color, setColor] = useState('#000');
@@ -13,13 +13,13 @@ const Sidebar = () => {
 
   const componentRefs = [sprayPaintRef, colorPaletteRef];
 
-  const handleClickSelection = ({ classList }) => {
+  const handleClickSelection = ({ classList, dataset}) => {
+    dispatch({ type: SET_TOOL, payload: dataset.tool})
+
     componentRefs.forEach(({ current }) => {
       current.classList.remove('active');
     });
     classList.add('active');
-    // console.log(e);
-    // TODO: go through all refs turn off, then turn on active
   }
 
   const handleColorPickerClick = ({ currentTarget }) => {
@@ -33,11 +33,24 @@ const Sidebar = () => {
     handleClickSelection(currentTarget);
   }
 
+  const handleColorChange = (color) => {
+    setColor(color);
+    dispatch({ type: SET_COLOR , payload: color.hex});
+  }
+
+  const handleSave = (e) => {
+    const canvas = document.getElementById("canvas");
+    if (canvas) {
+      const href = canvas.toDataURL();
+      e.currentTarget.href = href;
+    };
+  }
+
   return (
     <aside className="sidebar-container">
       <div className="sidebar-controls">
         <div className="icon drag">
-          <FontAwesomeIcon icon={faArrowsAlt} size="lg"/>
+          {/* <FontAwesomeIcon icon={faArrowsAlt} size="lg"/> */}
         </div>
         <div className="icon close" onClick={() => setMinimized(!minimized)}>
           <FontAwesomeIcon icon={faMinus} size="lg"/>
@@ -48,6 +61,7 @@ const Sidebar = () => {
           className="icon spraypaint"
           ref={sprayPaintRef}
           onClick={handleNonColorPickerSelection}
+          data-tool={SPRAY_PAINT}
         >
           <FontAwesomeIcon icon={faSprayCan} size="lg"/>
         </div>
@@ -61,12 +75,17 @@ const Sidebar = () => {
           <ChromePicker
             className={`color-picker ${openColorPicker ? 'active' : ''}`}
             color={color}
-            onChange={(color) => setColor(color)}
+            onChange={handleColorChange}
           />
         </div>
-        <div className="icon save">
+        <a
+          className="icon save"
+          download="grafeetee.png"
+          onClick={handleSave}
+          href="/"
+        >
           <FontAwesomeIcon icon={faSave} size="lg"/>
-        </div>
+        </a>
       </div>
     </aside>
   )
