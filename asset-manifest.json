@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/grafeetee/static/css/main.a87fd564.chunk.css",
-    "main.js": "/grafeetee/static/js/main.d0ab8c86.chunk.js",
-    "main.js.map": "/grafeetee/static/js/main.d0ab8c86.chunk.js.map",
+    "main.css": "/grafeetee/static/css/main.1ee69a77.chunk.css",
+    "main.js": "/grafeetee/static/js/main.59a45856.chunk.js",
+    "main.js.map": "/grafeetee/static/js/main.59a45856.chunk.js.map",
     "runtime-main.js": "/grafeetee/static/js/runtime-main.5b128083.js",
     "runtime-main.js.map": "/grafeetee/static/js/runtime-main.5b128083.js.map",
-    "static/js/2.95bf9c11.chunk.js": "/grafeetee/static/js/2.95bf9c11.chunk.js",
-    "static/js/2.95bf9c11.chunk.js.map": "/grafeetee/static/js/2.95bf9c11.chunk.js.map",
+    "static/js/2.f846b51f.chunk.js": "/grafeetee/static/js/2.f846b51f.chunk.js",
+    "static/js/2.f846b51f.chunk.js.map": "/grafeetee/static/js/2.f846b51f.chunk.js.map",
     "index.html": "/grafeetee/index.html",
-    "static/css/main.a87fd564.chunk.css.map": "/grafeetee/static/css/main.a87fd564.chunk.css.map",
-    "static/js/2.95bf9c11.chunk.js.LICENSE.txt": "/grafeetee/static/js/2.95bf9c11.chunk.js.LICENSE.txt"
+    "static/css/main.1ee69a77.chunk.css.map": "/grafeetee/static/css/main.1ee69a77.chunk.css.map",
+    "static/js/2.f846b51f.chunk.js.LICENSE.txt": "/grafeetee/static/js/2.f846b51f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.5b128083.js",
-    "static/js/2.95bf9c11.chunk.js",
-    "static/css/main.a87fd564.chunk.css",
-    "static/js/main.d0ab8c86.chunk.js"
+    "static/js/2.f846b51f.chunk.js",
+    "static/css/main.1ee69a77.chunk.css",
+    "static/js/main.59a45856.chunk.js"
   ]
 }
