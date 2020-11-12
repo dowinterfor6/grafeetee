@@ -1,0 +1,34 @@
+.options-container {
+  overflow: hidden;
+  padding: 10px;
+  border: 1px solid $darkBlue;
+  border-radius: 3px;
+  background: $grey;
+  position: absolute;
+  font-family: sans-serif;
+  left: 60px;
+  transition: opacity 0.3s;
+  opacity: 0;
+  // TODO: Display none messes up transitions
+  display: none;
+  
+  &.open {
+    opacity: 1;
+    display: initial;
+  }
+
+  .label-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    input {
+      width: 50px;
+    }
+  }
+  
+  .slider-input {
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+}

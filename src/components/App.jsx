@@ -7,6 +7,8 @@ const App = () => {
   // Action types
   const SET_COLOR = 'SETCOLOR';
   const SET_TOOL = 'SETTOOL';
+  const SET_THICKNESS = 'SETTHICKNESS';
+  const SET_HARDNESS = 'SETHARDNESS';
 
   // Consts
   const SPRAY_PAINT = 'SPRAYPAINT';
@@ -23,6 +25,12 @@ const App = () => {
       case SET_TOOL:
         nextState.activeTool = action.payload;
         return nextState;
+      case SET_THICKNESS:
+        nextState.thickness = action.payload;
+        return nextState;
+      case SET_HARDNESS:
+          nextState.hardness = action.payload;
+        return nextState;
       default:
         return state;
     }
@@ -31,6 +39,8 @@ const App = () => {
   const initialState = {
     color: "#000",
     activeTool: SPRAY_PAINT,
+    thickness: 50,
+    hardness: 50,
   }
 
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -39,8 +49,11 @@ const App = () => {
     <section className="app-container">
       <Sidebar
         dispatch={dispatch}
+        state={state}
         SET_COLOR={SET_COLOR}
         SET_TOOL={SET_TOOL}
+        SET_THICKNESS={SET_THICKNESS}
+        SET_HARDNESS={SET_HARDNESS}
         SPRAY_PAINT={SPRAY_PAINT}
       />
       <Canvas
